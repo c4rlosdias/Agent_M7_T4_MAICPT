@@ -74,5 +74,5 @@ if __name__ == "__main__":
     # )   
     
    
-    agent_os.serve(app="Aula_04_2_Agentes_2:app", reload=True)
+    agent_os.serve(app="Aula_04_2_Agentes:app", reload=True)
 
