@@ -8,7 +8,7 @@ Este script demonstra o uso conjunto de:
 2. uma tool Python que lê um arquivo IFC
 
 Dependências:
-    pip install agno ifcopenshell anthropic
+    pip install agno ifcopenshell groq fastapi uvicorn python-dotenv
 
 Uso:
     python agente_extintores.py
@@ -25,7 +25,7 @@ from agno.tools import tool
 from agno.os import AgentOS
 
 
-# carrega ANTHROPIC_API_KEY de um arquivo .env (se existir)
+# carrega GROQ_API_KEY de um arquivo .env (se existir)
 load_dotenv()
 
 
@@ -47,6 +47,7 @@ agente = Agent(
     debug_mode=True,
 )
 
+# usando o Agent OS (opcional, para servir o agente via API)
 agent_os = AgentOS(
     id="AgenteExtintoresIFC",
     description="Agente para verificar extintores em arquivos IFC usando a NBR 15808 como referência",
@@ -65,13 +66,13 @@ if __name__ == "__main__":
 
     arquivo_ifc = Path("extintores.ifc")
 
-    '''
-    agente.print_response(
-        f"Analise o arquivo '{arquivo_ifc}' usando a tool disponível e verifique, de forma simples, "
-        f"se os extintores parecem compatíveis com a NBR 15808.",
-        stream=True,
-    )   
-    '''
+    
+    # agente.print_response(
+    #     f"Analise o arquivo '{arquivo_ifc}' usando a tool disponível e verifique, de forma simples, "
+    #     f"se os extintores parecem compatíveis com a NBR 15808.",
+    #     stream=True,
+    # )   
+    
    
     agent_os.serve(app="Aula_04_2_Agentes_2:app", reload=True)
 
