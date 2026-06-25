@@ -48,13 +48,13 @@ agente = Agent(
 )
 
 # usando o Agent OS (opcional, para servir o agente via API)
-agent_os = AgentOS(
-    id="AgenteExtintoresIFC",
-    description="Agente para verificar extintores em arquivos IFC usando a NBR 15808 como referência",
-    agents=[agente],
-)
+# agent_os = AgentOS(
+#     id="AgenteExtintoresIFC",
+#     description="Agente para verificar extintores em arquivos IFC usando a NBR 15808 como referência",
+#     agents=[agente],
+# )
 
-app=agent_os.get_app()
+# app=agent_os.get_app()
 
 
 
@@ -67,12 +67,12 @@ if __name__ == "__main__":
     arquivo_ifc = Path("extintores.ifc")
 
     
-    # agente.print_response(
-    #     f"Analise o arquivo '{arquivo_ifc}' usando a tool disponível e verifique, de forma simples, "
-    #     f"se os extintores parecem compatíveis com a NBR 15808.",
-    #     stream=True,
-    # )   
+    agente.print_response(
+        f"Analise o arquivo '{arquivo_ifc}' usando a tool disponível e verifique, de forma simples, "
+        f"se os extintores parecem compatíveis com a NBR 15808.",
+        stream=True,
+    )   
     
    
-    agent_os.serve(app="Aula_04_2_Agentes:app", reload=True)
+    # agent_os.serve(app="Aula_04_2_Agentes:app", reload=True)
 

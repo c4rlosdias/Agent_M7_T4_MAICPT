@@ -184,7 +184,7 @@ Terminal 1, na raiz do projeto:
 Terminal 2, dentro de `agent-ui`:
 
 ```powershell
-pnpm dev
+npm run dev
 ```
 
 Depois abra:
