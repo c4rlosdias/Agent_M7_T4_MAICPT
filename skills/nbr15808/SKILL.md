@@ -252,7 +252,7 @@ Psets disponíveis no padrão IFC para pavimento (IfcBuildingStorey). Usar:
 ---
 ## 9. Scripts Python para leitura de extintores em IFC
 
-Para obter informações sobre os extintores em um modelo IFC, usar o script em ./scripts/ler_extintores_ifc.py, que utiliza a biblioteca IfcOpenShell para extrair os dados dos extintores representados como `IfcFireSuppressionTerminal` e suas propriedades associadas.
+Para obter informações sobre os extintores em um modelo IFC, usar a tool ler_extintores_ifc, que utiliza a biblioteca IfcOpenShell para extrair os dados dos extintores representados como `IfcFireSuppressionTerminal` e suas propriedades associadas.
 ---
 
 ## 10. Perguntas frequentes e respostas rápidas
